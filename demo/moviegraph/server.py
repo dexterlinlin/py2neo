@@ -62,6 +62,9 @@ def get_movie_list():
     """
     return template("movie_list", movies=Movie.select(graph).order_by("_.title"))
 
+@get("/movies/")
+def get_movies_list():
+    return get_movie_list()
 
 @get("/movie/<title>")
 def get_movie(title):
